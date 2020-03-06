@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "John Thimmig <thimmig2@gmail.com>",
   "dependencies": {
+    "@loadable/component": "^5.12.0",
     "@material-ui/core": "^4.9.5",
     "@material-ui/styles": "^4.9.0",
     "aws-amplify": "^1.0.5",

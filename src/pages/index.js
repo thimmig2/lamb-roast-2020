@@ -2,12 +2,12 @@ import React from "react";
 
 import Layout from "../components/layout";
 import { createMuiTheme, makeStyles, responsiveFontSizes, ThemeProvider } from "@material-ui/core/styles";
-import { Button, Grid, TextField, Typography, Paper } from "@material-ui/core";
+import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import YouTube from "react-youtube";
 import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
-import Snowfall from "react-snowfall";
+import CustomSnowfall from "../components/CustomSnowfall";
 
 const theme = responsiveFontSizes(createMuiTheme({
   palette: {
@@ -31,9 +31,6 @@ const useStyles = makeStyles({
   pageBackground: {
     background: "linear-gradient(#009fff, #230046)",
     height: "100%"
-  },
-  snowfall: {
-    "z-index": -100
   },
   youtubePlayer: {
     top: 0,
@@ -64,7 +61,7 @@ const IndexPage = ({ data }) => {
         <Parallax pages={pages}>
           <ParallaxLayer factor={pages} offset={0} speed={0}>
             <div className={classes.pageBackground}>
-              <Snowfall className={classes.snowfall}/>
+              <CustomSnowfall/>
             </div>
           </ParallaxLayer>
 
@@ -216,15 +213,14 @@ const IndexPage = ({ data }) => {
 };
 
 export const query = graphql`
-        query {
-        file(relativePath: {eq: "lamb-icon.png"}) {
-        childImageSharp {
-        fixed(width: 100, height: 100) {
+query {
+  file(relativePath: {eq: "lamb-icon.png"}) {
+    childImageSharp {
+      fixed(width: 100, height: 100) {
         ...GatsbyImageSharpFixed
       }
-      }
-      }
-      }
-        `;
+    }
+  }
+}`;
 
 export default IndexPage;

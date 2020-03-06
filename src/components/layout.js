@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import { ThemeProvider, createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
-import { Typography } from "@material-ui/core";
+import { graphql, StaticQuery } from "gatsby";
 import "./layout.css";
 
 
