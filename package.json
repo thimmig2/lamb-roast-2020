@@ -11,6 +11,7 @@
     "aws-amplify-react": "^1.0.5",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.13.45",
+    "gatsby-cli": "^2.10.0",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-manifest": "^2.2.4",
     "gatsby-plugin-material-ui": "^2.1.6",

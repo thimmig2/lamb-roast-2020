@@ -28,6 +28,21 @@ const useStyles = makeStyles({
     // ].join(",")})`,
     height: "100%"
   },
+  spacer: {
+    height: '10vh',
+  },
+  // Styling for wild statements
+  wilder: {
+    fontFamily: "'Trade Winds', cursive",
+  },
+  // Styling for headers
+  header: {
+    fontFamily: "'Sen', sans-serif",
+  },
+  // Styling for paragraph blocks
+  type: {
+    fontFamily: "'Caladea', serif",
+  },
   pageBackground: {
     background: "linear-gradient(#009fff, #230046)",
     height: "100%"
@@ -78,10 +93,11 @@ const IndexPage = ({ data }) => {
               <Grid item xs/>
               {/* xs 9 controls the width */}
               <Grid item xs={9}>
-                <Typography variant={"h1"} color={"textPrimary"}>
-                  That’s right, we’re back, babyyyy!
+                <Typography variant={"h1"} color={"textPrimary"} className={classes.header}>
+                  We're back, baby!
                 </Typography>
-                <Typography variant={"body1"} color={"textPrimary"}>
+                <div className={classes.spacer}></div>
+                <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
                   Lamb and libations can’t stay apart for long, and soon they’ll be reunited once again! Last year was
                   a
                   hell of a ride. A weekend of lamb and beer graced by a dusting of snow, flakes falling on all of
@@ -105,7 +121,7 @@ const IndexPage = ({ data }) => {
                     autoplay: (false ? 1 : 0)
                   }
                 }}/>
-                <Typography align={"center"} variant={"subtitle1"} color={"textPrimary"}>
+                <Typography align={"center"} variant={"subtitle1"} color={"textPrimary"} className={classes.header}>
                   Shoutout to Vinny for the awesome piece. Go check out his other stuff here.
                 </Typography>
               </Grid>
@@ -118,35 +134,39 @@ const IndexPage = ({ data }) => {
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
-                <Typography variant={"h1"} color={"textPrimary"}>
+                <Typography variant={"h1"} color={"textPrimary"} className={classes.header}>
                   What It's All About
                 </Typography>
-                <Typography variant={"body1"} color={"textPrimary"}>
+                <div className={classes.spacer}></div>
+                <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
                   A lot of smiling faces, yeah? We want to keep it that way, so we’ve put together a list of values to
-                  keep in mind for the coming event. These aren’t meant as hard rules, just a guide to try to get on
-                  the
+                  keep in mind for the coming event. These aren’t meant as hard rules, just a guide to try to get on the
                   same wavelength.
+                </Typography>
+                <div className={classes.spacer}></div>
+                <Typography variant={"body1"} color={"textPrimary"}>
+                  <ul>
+                    <li className={classes.header}>Community</li>
+                    - This one’s huge. It’s really the whole point of the event. To gather a bunch of wonderful humans
+                    together
+                    so that everyone can meet someone new. While it’s great to hang with your friends, there will be a
+                    lot
+                    of new
+                    friends here waiting to be made.
 
-                  - Community
-                  - This one’s huge. It’s really the whole point of the event. To gather a bunch of wonderful humans
-                  together
-                  so that everyone can meet someone new. While it’s great to hang with your friends, there will be a
-                  lot
-                  of new
-                  friends here waiting to be made.
+                    - Respect, Kindess, Love, etc.
+                    - I know it sounds kind of patronizing, but it’s good to remind ourselves every once and awhile.
+                    This
+                    applies
+                    to everyone, from self-proclaimed assholes to work-hardened saints.
 
-                  - Respect, Kindess, Love, etc.
-                  - I know it sounds kind of patronizing, but it’s good to remind ourselves every once and awhile.
-                  This
-                  applies
-                  to everyone, from self-proclaimed assholes to work-hardened saints.
-
-                  - FUN
-                  - The most cliché of them all. But taken together with the first two, it reaches a whole new plane.
-                  Want
-                  to
-                  play in the mud? Sweet! Why not ask someone else if they want to join. Got a fiddle to play in the
-                  trees? Invite that sick dude with the harmonica (me).
+                    - FUN
+                    - The most cliché of them all. But taken together with the first two, it reaches a whole new plane.
+                    Want
+                    to
+                    play in the mud? Sweet! Why not ask someone else if they want to join. Got a fiddle to play in the
+                    trees? Invite that sick dude with the harmonica (me).
+                  </ul>
 
                   Alright, now that we have that out of the way, here’s what’s new for the coming roast.
 
@@ -216,7 +236,7 @@ export const query = graphql`
 query {
   file(relativePath: {eq: "lamb-icon.png"}) {
     childImageSharp {
-      fixed(width: 100, height: 100) {
+      fixed(width: 500, height: 500) {
         ...GatsbyImageSharpFixed
       }
     }
