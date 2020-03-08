@@ -76,7 +76,7 @@ const useStyles = makeStyles({
 
 const IndexPage = ({ data }) => {
   const classes = useStyles();
-  const pages = 4;
+  const pages = 6;
   return (
     <Layout>
       <ThemeProvider theme={theme}>
@@ -130,6 +130,7 @@ const IndexPage = ({ data }) => {
                     autoplay: (false ? 1 : 0)
                   }
                 }}/>
+                <div className={classes.spacerSmall}></div>
                 <Typography align={"center"} variant={"subtitle1"} color={"textPrimary"} className={classes.header}>
                   Shoutout to Vinny for the awesome piece!
                 </Typography>
@@ -186,44 +187,62 @@ const IndexPage = ({ data }) => {
                     trees? Invite that sick dude with the harmonica (me).
                     </Typography>
                   </ul>
+                  <div className={classes.spacer}></div>
+                  <div className={classes.spacer}></div>
                   
                   <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
                     Alright, now that we have that out of the way, here’s what’s new for the coming roast.
                   </Typography>
+                  <div className={classes.spacer}></div>
                   <ul>
 
-                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>New Musical Talent</li></Typography>
-                    - General Mojo’s, your homegrown psychedelic experience
-                    - Ben Hunter & Joe Seamons, also homegrown, with the sweet sweet sounds of bluegrass
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>New Musical Talent!</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <ul>
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
+                      General Mojo’s, your homegrown psychedelic experience</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
+                      Ben Hunter & Joe Seamons, also homegrown, with the sweet sweet sounds of bluegrass</li></Typography>
+                    </ul>
+                    <div className={classes.spacerSmall}></div>
 
-                    - Bigger fire!
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>Bigger fire!</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>More fire extinguishers</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>If you didn’t click the links to the music, do yourself a favor and check em out</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <ul><li><Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
+                    matter</li></Typography></li></ul>
+                    <div className={classes.spacerSmall}></div>
 
-                    - More fire extinguishers
-
-                    - If you didn’t click the links to the music, do yourself a favor and check em out
-
-                    - Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!
-                    - This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
-                    matter
+                    
+                    
                   </ul>
               </Grid>
               <Grid item xs/>
             </Grid>
           </ParallaxLayer>
 
-          <ParallaxLayer factor={1} offset={4.20} speed={0.5}>
+          <ParallaxLayer factor={1} offset={5} speed={0.5}>
             <Grid container className={classes.root} spacing={4}>
               <Grid item xs={12}>
                 <Grid container justify={"center"} alignItems={"center"}>
                   <Grid item xs={6}>
-                    <Typography variant={"body1"} color={"textPrimary"}>
-                      If you’ve got a code, throw it in the form below to RSVP and receive instructions for payment.
-
-                      GET STOKED
-
-                      Sincerely,
-                      Foot in the Door Cooperative
-                    </Typography>
+                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>If you’ve got a code, throw it in the form below to RSVP and receive instructions for payment.</Typography>
+                  <div className={classes.spacerSmall}></div>
+                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>GET STOKED</Typography>
+                  <div className={classes.spacerSmall}></div>
+                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>Sincerely,</Typography>
+                  
+                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>Foot in the Door Cooperative</Typography>
+                  <div className={classes.spacerSmall}></div>
+                      
+                      
+                    
                   </Grid>
                 </Grid>
 
