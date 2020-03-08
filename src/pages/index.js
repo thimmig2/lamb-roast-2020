@@ -31,6 +31,9 @@ const useStyles = makeStyles({
   spacer: {
     height: '10vh',
   },
+  spacerSmall: {
+    height: '5vh',
+  },
   // Styling for wild statements
   wilder: {
     fontFamily: "'Trade Winds', cursive",
@@ -42,6 +45,12 @@ const useStyles = makeStyles({
   // Styling for paragraph blocks
   type: {
     fontFamily: "'Caladea', serif",
+    fontSize: '2rem',
+  },
+  listDescription: {
+    marginLeft: '5vw',
+    fontFamily: "'Caladea', serif",
+    fontSize: '1.7rem',
   },
   pageBackground: {
     background: "linear-gradient(#009fff, #230046)",
@@ -81,14 +90,14 @@ const IndexPage = ({ data }) => {
           </ParallaxLayer>
 
           {/* Logo */}
-          <ParallaxLayer offset={0.2} speed={-0.5}>
+          <ParallaxLayer offset={0} speed={0.1}>
             <Grid container justify="center">
               <Img fixed={data.file.childImageSharp.fixed}/>
             </Grid>
           </ParallaxLayer>
 
           {/* First Section */}
-          <ParallaxLayer factor={.75} offset={.5} speed={0}>
+          <ParallaxLayer factor={.75} offset={.5} speed={0.1}>
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               {/* xs 9 controls the width */}
@@ -102,7 +111,7 @@ const IndexPage = ({ data }) => {
                   a
                   hell of a ride. A weekend of lamb and beer graced by a dusting of snow, flakes falling on all of
                   your
-                  smiling faces. Vinny Dom made a spectacular video of the whole shebang, placed here for both
+                  smiling faces. Vinny Dom made a spectacular video of the whole shehbang, placed here for both
                   nostalgia
                   and stoke.
                 </Typography>
@@ -111,7 +120,7 @@ const IndexPage = ({ data }) => {
             </Grid>
           </ParallaxLayer>
 
-          <ParallaxLayer factor={1} offset={1.5} speed={.25}>
+          <ParallaxLayer factor={1} offset={1.3} speed={.25}>
             <Grid container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -122,7 +131,7 @@ const IndexPage = ({ data }) => {
                   }
                 }}/>
                 <Typography align={"center"} variant={"subtitle1"} color={"textPrimary"} className={classes.header}>
-                  Shoutout to Vinny for the awesome piece. Go check out his other stuff here.
+                  Shoutout to Vinny for the awesome piece!
                 </Typography>
               </Grid>
               <Grid item xs/>
@@ -130,7 +139,7 @@ const IndexPage = ({ data }) => {
           </ParallaxLayer>
 
 
-          <ParallaxLayer factor={1.5} offset={2} speed={.5}>
+          <ParallaxLayer factor={1.5} offset={2} speed={.25}>
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -139,57 +148,70 @@ const IndexPage = ({ data }) => {
                 </Typography>
                 <div className={classes.spacer}></div>
                 <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
-                  A lot of smiling faces, yeah? We want to keep it that way, so we’ve put together a list of values to
-                  keep in mind for the coming event. These aren’t meant as hard rules, just a guide to try to get on the
+                  So many smiling faces. We want to keep it that way, so we’ve put together a list of values to
+                  keep in mind for the coming event. These aren’t meant as hard rules, just a guide to get on the
                   same wavelength.
                 </Typography>
                 <div className={classes.spacer}></div>
-                <Typography variant={"body1"} color={"textPrimary"}>
-                  <ul>
-                    <li className={classes.header}>Community</li>
-                    - This one’s huge. It’s really the whole point of the event. To gather a bunch of wonderful humans
+                <ul>
+                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>Community</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.listDescription} color={"textPrimary"}>
+                    This one’s huge. It’s really the whole point of the event. To gather a bunch of wonderful humans
                     together
                     so that everyone can meet someone new. While it’s great to hang with your friends, there will be a
                     lot
                     of new
                     friends here waiting to be made.
-
-                    - Respect, Kindess, Love, etc.
-                    - I know it sounds kind of patronizing, but it’s good to remind ourselves every once and awhile.
+                    </Typography>
+                    <div className={classes.spacer}></div>
+                    
+                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>Respect, Kindess, Love, etc.</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.listDescription} color={"textPrimary"}>
+                    I know it sounds kind of patronizing, but it’s good to remind ourselves every once and awhile.
                     This
                     applies
                     to everyone, from self-proclaimed assholes to work-hardened saints.
+                    </Typography>
+                    <div className={classes.spacer}></div>
 
-                    - FUN
-                    - The most cliché of them all. But taken together with the first two, it reaches a whole new plane.
+                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>FUN</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Typography className={classes.listDescription} color={"textPrimary"}>
+                    The most cliché of them all. But taken together with the first two, it reaches a whole new plane.
                     Want
                     to
                     play in the mud? Sweet! Why not ask someone else if they want to join. Got a fiddle to play in the
                     trees? Invite that sick dude with the harmonica (me).
+                    </Typography>
                   </ul>
+                  
+                  <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
+                    Alright, now that we have that out of the way, here’s what’s new for the coming roast.
+                  </Typography>
+                  <ul>
 
-                  Alright, now that we have that out of the way, here’s what’s new for the coming roast.
+                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>New Musical Talent</li></Typography>
+                    - General Mojo’s, your homegrown psychedelic experience
+                    - Ben Hunter & Joe Seamons, also homegrown, with the sweet sweet sounds of bluegrass
 
-                  - New Musical Talent
-                  - General Mojo’s, your homegrown psychedelic experience
-                  - Ben Hunter & Joe Seamons, also homegrown, with the sweet sweet sounds of bluegrass
+                    - Bigger fire!
 
-                  - Bigger fire!
+                    - More fire extinguishers
 
-                  - More fire extinguishers
+                    - If you didn’t click the links to the music, do yourself a favor and check em out
 
-                  - If you didn’t click the links to the music, do yourself a favor and check em out
-
-                  - Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!
-                  - This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
-                  matter
-                </Typography>
+                    - Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!
+                    - This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
+                    matter
+                  </ul>
               </Grid>
               <Grid item xs/>
             </Grid>
           </ParallaxLayer>
 
-          <ParallaxLayer factor={1} offset={3.25} speed={0.5}>
+          <ParallaxLayer factor={1} offset={4.20} speed={0.5}>
             <Grid container className={classes.root} spacing={4}>
               <Grid item xs={12}>
                 <Grid container justify={"center"} alignItems={"center"}>
@@ -236,7 +258,7 @@ export const query = graphql`
 query {
   file(relativePath: {eq: "lamb-icon.png"}) {
     childImageSharp {
-      fixed(width: 500, height: 500) {
+      fixed(width: 400, height: 400) {
         ...GatsbyImageSharpFixed
       }
     }
