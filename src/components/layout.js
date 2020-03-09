@@ -1,9 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { graphql, StaticQuery } from "gatsby";
-import "./layout.css";
-
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { graphql, StaticQuery } from 'gatsby'
+import './layout.css'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -21,8 +20,8 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" }
+            { name: 'description', content: 'Sample' },
+            { name: 'keywords', content: 'sample, something' },
           ]}
         >
           <html lang="en"/>
@@ -31,10 +30,10 @@ const Layout = ({ children }) => (
       </>
     )}
   />
-);
+)
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
-};
+  children: PropTypes.node.isRequired,
+}
 
-export default Layout;
+export default Layout
