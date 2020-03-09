@@ -96,7 +96,7 @@ const IndexPage = ({ data }) => {
         
           
             <div className={classes.pageBackground}>
-              <CustomSnowfall/>
+            <CustomSnowfall/>
             
         
 
@@ -114,13 +114,13 @@ const IndexPage = ({ data }) => {
               <Grid item xs/>
               {/* xs 9 controls the width */}
               <Grid item xs={9}>
-              <Typography className={classes.header} align={'center'} color={"textPrimary"}>__________________________________________</Typography>
-              <div className={classes.spacerTiny}></div>
+              <Typography variant={"h1"} className={classes.header} align={'center'} color={"textPrimary"}>_____</Typography>
+              <div className={classes.spacer}></div>
                 <Typography variant={"h1"} color={"textPrimary"} className={classes.header} align={'center'}>
                   We're back, baby!
                 </Typography>
-                <div className={classes.spacerTiny}></div>
-                <Typography className={classes.header} align={'center'} color={"textPrimary"}>______________________________________________________________________________________</Typography>
+    
+                <Typography variant={"h1"} className={classes.header} align={'center'} color={"textPrimary"}>__________________</Typography>
                 <div className={classes.spacer}></div>
                 <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
                   Lamb and libations can’t stay apart for long, and soon they’ll be reunited once again! Last year was
