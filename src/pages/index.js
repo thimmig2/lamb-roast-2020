@@ -6,14 +6,13 @@ import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import YouTube from "react-youtube";
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons";
 import CustomSnowfall from "../components/CustomSnowfall";
 
 const theme = responsiveFontSizes(createMuiTheme({
   palette: {
     type: "dark"
-  }
-}));
+  },
+}), {factor: 2,});
 
 const useStyles = makeStyles({
   section: {
@@ -78,6 +77,11 @@ const useStyles = makeStyles({
   },
   codeForm: {
     width: "100%"
+  },
+  footer: {
+    fontFamily: "'Futura', sans-serif",
+    align: 'center',
+    opacity: '0.5',
   }
 });
 
@@ -89,23 +93,23 @@ const IndexPage = ({ data }) => {
       <ThemeProvider theme={theme}>
 
         {/* Gradient */}
-        <Parallax pages={pages}>
-          <ParallaxLayer factor={pages} offset={0} speed={0}>
+        
+          
             <div className={classes.pageBackground}>
               <CustomSnowfall/>
-            </div>
-          </ParallaxLayer>
+            
+        
 
           {/* Logo */}
-          <ParallaxLayer offset={0} speed={0.1}>
+          
             <Grid container justify="center">
               <Img fixed={data.file.childImageSharp.fixed}/>
             </Grid>
-          </ParallaxLayer>
+          
           
 
           {/* First Section */}
-          <ParallaxLayer factor={1} offset={.6} speed={0.1}>
+          
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               {/* xs 9 controls the width */}
@@ -130,9 +134,10 @@ const IndexPage = ({ data }) => {
               </Grid>
               <Grid item xs/>
             </Grid>
-          </ParallaxLayer>
+            <div className={classes.spacer}></div>
+          
 
-          <ParallaxLayer factor={1} offset={1.5} speed={.25}>
+          
             <Grid container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -149,10 +154,11 @@ const IndexPage = ({ data }) => {
               </Grid>
               <Grid item xs/>
             </Grid>
-          </ParallaxLayer>
+            <div className={classes.spacer}></div>
+          
 
 
-          <ParallaxLayer factor={1.5} offset={2.1} speed={.25}>
+          
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -167,7 +173,7 @@ const IndexPage = ({ data }) => {
                 </Typography>
                 <div className={classes.spacer}></div>
                 <ul>
-                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>Community</li></Typography>
+                    <Typography variant={"h1"} className={classes.header} variant={"h3"} color={"textPrimary"}><li>Community</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <Typography className={classes.listDescription} color={"textPrimary"}>
                     This one’s huge. It’s really the whole point of the event. To gather a bunch of wonderful humans
@@ -179,7 +185,7 @@ const IndexPage = ({ data }) => {
                     </Typography>
                     <div className={classes.spacer}></div>
                     
-                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>Respect, Kindess, Love, etc.</li></Typography>
+                    <Typography variant={"h1"} className={classes.header} variant={"h3"} color={"textPrimary"}><li>Respect, Kindess, Love, etc.</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <Typography className={classes.listDescription} color={"textPrimary"}>
                     I know it sounds kind of patronizing, but it’s good to remind ourselves every once and awhile.
@@ -189,7 +195,7 @@ const IndexPage = ({ data }) => {
                     </Typography>
                     <div className={classes.spacer}></div>
 
-                    <Typography className={classes.header} variant={"h3"} color={"textPrimary"}><li>FUN</li></Typography>
+                    <Typography variant={"h1"} className={classes.header} variant={"h3"} color={"textPrimary"}><li>FUN</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <Typography className={classes.listDescription} color={"textPrimary"}>
                     The most cliché of them all. But taken together with the first two, it reaches a whole new plane.
@@ -208,10 +214,10 @@ const IndexPage = ({ data }) => {
                   <div className={classes.spacer}></div>
                   <ul>
 
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>New Musical Talent!</li></Typography>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>New Musical Talent!</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <ul>
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>
                       General Mojo’s, your homegrown psychedelic experience</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <Grid container justify="center" alignItems={"center"}>
@@ -227,7 +233,7 @@ const IndexPage = ({ data }) => {
                     </Grid>
                     <Grid item xs/>
                     </Grid>
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>
                       Ben Hunter & Joe Seamons with the sweet sweet sounds of bluegrass</li></Typography>
                     <div className={classes.spacerSmall}></div>
                     <Grid container justify="center" alignItems={"center"}>
@@ -246,15 +252,15 @@ const IndexPage = ({ data }) => {
                     </ul>
                     <div className={classes.spacerSmall}></div>
 
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>Bigger fire!</li></Typography>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>Bigger fire!</li></Typography>
                     <div className={classes.spacerSmall}></div>
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>More fire extinguishers</li></Typography>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>More fire extinguishers</li></Typography>
                     <div className={classes.spacerSmall}></div>
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>If you didn’t click the links to the music, do yourself a favor and check em out</li></Typography>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>If you didn’t click the links to the music, do yourself a favor and check em out</li></Typography>
                     <div className={classes.spacerSmall}></div>
-                    <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!</li></Typography>
+                    <Typography variant={"h1"} className={classes.type} variant={"h4"} color={"textPrimary"}><li>Official Lamb Roast x Klean Kanteen Pint Cups to for lifelong memories and no plastic cup waste!</li></Typography>
                     <div className={classes.spacerSmall}></div>
-                    <ul><li><Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
+                    <ul><li><Typography variant={"h2"}className={classes.type} variant={"h4"} color={"textPrimary"}><li>This comes with your ticket. We won’t be providing any disposable drink ware, or eat ware for that
                     matter</li></Typography></li></ul>
                     <div className={classes.spacerSmall}></div>
 
@@ -264,20 +270,20 @@ const IndexPage = ({ data }) => {
               </Grid>
               <Grid item xs/>
             </Grid>
-          </ParallaxLayer>
+          
 
-          <ParallaxLayer factor={0.5} offset={6} speed={2}>
+            <div className={classes.spacer}></div>
             <Grid container className={classes.root} spacing={4}>
               <Grid item xs={12}>
                 <Grid container justify={"center"} alignItems={"center"}>
                   <Grid item xs={6}>
-                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>If you’ve got a code, throw it in the form below to RSVP and receive instructions for payment.</Typography>
+                  <Typography variant={"h1"} className={classes.header} variant={"h5"} color={"textPrimary"}>If you’ve got a code, throw it in the form below to RSVP and receive instructions for payment.</Typography>
                   <div className={classes.spacerSmall}></div>
-                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>GET STOKED</Typography>
+                  <Typography variant={"h1"} className={classes.header} variant={"h5"} color={"textPrimary"}>:O)</Typography>
                   <div className={classes.spacerSmall}></div>
-                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>Sincerely,</Typography>
+                  <Typography variant={"h1"} className={classes.header} variant={"h5"} color={"textPrimary"}>Sincerely,</Typography>
                   
-                  <Typography className={classes.header} variant={"h5"} color={"textPrimary"}>Foot in the Door Cooperative</Typography>
+                  <Typography variant={"h1"} className={classes.header} variant={"h5"} color={"textPrimary"}>Foot in the Door Cooperative</Typography>
                   <div className={classes.spacerSmall}></div>
                       
                       
@@ -304,8 +310,15 @@ const IndexPage = ({ data }) => {
                 </form>
               </Grid>
             </Grid>
-          </ParallaxLayer>
-        </Parallax>
+            
+            <div className={classes.spacer}></div>
+            <div className={classes.spacer}></div>
+            
+            <Typography variant={"h5"} align={'center'} className={classes.footer} color={'textPrimary'}>Copyright 2020</Typography>
+            
+            <div className={classes.spacer}></div>
+            <div className={classes.spacer}></div>
+            </div>
 
       </ThemeProvider>
     </Layout>
