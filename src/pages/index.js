@@ -34,13 +34,20 @@ const useStyles = makeStyles({
   spacerSmall: {
     height: '5vh',
   },
+  spacerTiny: {
+    height: '2vh',
+  },
   // Styling for wild statements
   wilder: {
     fontFamily: "'Trade Winds', cursive",
   },
   // Styling for headers
   header: {
-    fontFamily: "'Sen', sans-serif",
+    fontFamily: "'Futura', sans-serif",
+  },
+  headerTop: {
+    fontFamily: "'Futura', sans-serif",
+    textDecoration: 'underline',
   },
   // Styling for paragraph blocks
   type: {
@@ -76,7 +83,7 @@ const useStyles = makeStyles({
 
 const IndexPage = ({ data }) => {
   const classes = useStyles();
-  const pages = 6;
+  const pages = 6.5;
   return (
     <Layout>
       <ThemeProvider theme={theme}>
@@ -95,16 +102,21 @@ const IndexPage = ({ data }) => {
               <Img fixed={data.file.childImageSharp.fixed}/>
             </Grid>
           </ParallaxLayer>
+          
 
           {/* First Section */}
-          <ParallaxLayer factor={.75} offset={.5} speed={0.1}>
+          <ParallaxLayer factor={1} offset={.6} speed={0.1}>
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               {/* xs 9 controls the width */}
               <Grid item xs={9}>
-                <Typography variant={"h1"} color={"textPrimary"} className={classes.header}>
+              <Typography className={classes.header} align={'center'} color={"textPrimary"}>__________________________________________</Typography>
+              <div className={classes.spacerTiny}></div>
+                <Typography variant={"h1"} color={"textPrimary"} className={classes.header} align={'center'}>
                   We're back, baby!
                 </Typography>
+                <div className={classes.spacerTiny}></div>
+                <Typography className={classes.header} align={'center'} color={"textPrimary"}>______________________________________________________________________________________</Typography>
                 <div className={classes.spacer}></div>
                 <Typography variant={"body1"} color={"textPrimary"} className={classes.type}>
                   Lamb and libations can’t stay apart for long, and soon they’ll be reunited once again! Last year was
@@ -120,7 +132,7 @@ const IndexPage = ({ data }) => {
             </Grid>
           </ParallaxLayer>
 
-          <ParallaxLayer factor={1} offset={1.3} speed={.25}>
+          <ParallaxLayer factor={1} offset={1.5} speed={.25}>
             <Grid container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -140,7 +152,7 @@ const IndexPage = ({ data }) => {
           </ParallaxLayer>
 
 
-          <ParallaxLayer factor={1.5} offset={2} speed={.25}>
+          <ParallaxLayer factor={1.5} offset={2.1} speed={.25}>
             <Grid className={classes.section} container justify="center" alignItems={"center"}>
               <Grid item xs/>
               <Grid item xs={9}>
@@ -202,8 +214,35 @@ const IndexPage = ({ data }) => {
                     <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
                       General Mojo’s, your homegrown psychedelic experience</li></Typography>
                     <div className={classes.spacerSmall}></div>
+                    <Grid container justify="center" alignItems={"center"}>
+                    <Grid item xs/>
+                    <Grid item xs={9}>
+                      <YouTube className={classes.youtubePlayer} containerClassName={classes.youtubeContainer}
+                              videoId="g6NlvE18vzo" opts={{
+                        playerVars: { // https://developers.google.com/youtube/player_parameters
+                          autoplay: (false ? 1 : 0)
+                        }
+                      }}/>
+                      <div className={classes.spacerSmall}></div>
+                    </Grid>
+                    <Grid item xs/>
+                    </Grid>
                     <Typography className={classes.type} variant={"h4"} color={"textPrimary"}><li>
-                      Ben Hunter & Joe Seamons, also homegrown, with the sweet sweet sounds of bluegrass</li></Typography>
+                      Ben Hunter & Joe Seamons with the sweet sweet sounds of bluegrass</li></Typography>
+                    <div className={classes.spacerSmall}></div>
+                    <Grid container justify="center" alignItems={"center"}>
+                    <Grid item xs/>
+                    <Grid item xs={9}>
+                      <YouTube className={classes.youtubePlayer} containerClassName={classes.youtubeContainer}
+                              videoId="h1aorwUcGs4" opts={{
+                        playerVars: { // https://developers.google.com/youtube/player_parameters
+                          autoplay: (false ? 1 : 0)
+                        }
+                      }}/>
+                      <div className={classes.spacerSmall}></div>
+                      </Grid>
+                      <Grid item xs/>
+                      </Grid>
                     </ul>
                     <div className={classes.spacerSmall}></div>
 
@@ -227,7 +266,7 @@ const IndexPage = ({ data }) => {
             </Grid>
           </ParallaxLayer>
 
-          <ParallaxLayer factor={1} offset={5} speed={0.5}>
+          <ParallaxLayer factor={0.5} offset={6} speed={2}>
             <Grid container className={classes.root} spacing={4}>
               <Grid item xs={12}>
                 <Grid container justify={"center"} alignItems={"center"}>
@@ -277,7 +316,7 @@ export const query = graphql`
 query {
   file(relativePath: {eq: "lamb-icon.png"}) {
     childImageSharp {
-      fixed(width: 400, height: 400) {
+      fixed(width: 500, height: 500) {
         ...GatsbyImageSharpFixed
       }
     }
